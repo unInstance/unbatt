@@ -43,7 +43,6 @@ memcheck_v: debug
 memcheck_full: debug
 	valgrind --leak-check=full --show-leak-kinds=all ./$(PROJECT)
 
-
 clean:
 	rm $(PROJECT)
 
