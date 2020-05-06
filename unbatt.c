@@ -58,13 +58,13 @@ main(void) {
 	if (batd < 0) {
 		fprintf(stderr, "can't open %s: %s\n",
 			path, strerror(errno));
-		return -1;
+		return 1;
 	}
 	bytes = read(batd, buf, BUF_SIZE);
 	if (bytes < 0) {
 		fprintf(stderr, "can't read %s: %s\n",
 			path, strerror(errno));
-		return -1;
+		return 1;
 	}
 	buf[bytes] = '\0';
 	/* Save 1/100 of the battery's full value */
@@ -73,20 +73,20 @@ main(void) {
 
 	/* Open the file with the current battery level */
 	strncpy(path, BAT_PATH, MAX_PATH-1);
-	path[MAX_PATH - 1] = '\0';
+	path[MAX_PATH-1] = '\0';
 	strncat(path, "/energy_now", MAX_PATH - strlen(path)-1);
 	batd = open(path, O_RDONLY);
 	if (batd < 0) {
 		fprintf(stderr, "can't open %s: %s\n",
 			path, strerror(errno));
-		return -1;
+		return 1;
 	}
 	/* Open the file with the AC state */
 	acd = open(AC_ONLINE_PATH, O_RDONLY);
 	if (batd < 0) {
 		fprintf(stderr, "can't open %s: %s\n",
 			path, strerror(errno));
-		return -1;
+		return 1;
 	}
 	for (;; sleep(DELAY)) {
 		/* Read the current battery level */
