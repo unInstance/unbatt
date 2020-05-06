@@ -47,6 +47,6 @@ clean:
 	rm $(PROJECT)
 
 install:
-	cp $(PROJECT) $(PREFIX)/bin/$(PROJECT)
+	install $(PROJECT) $(PREFIX)/bin/$(PROJECT)
 
 .PHONY: all debug gdb memcheck memcheck_v memcheck_full clean install
