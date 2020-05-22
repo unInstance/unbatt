@@ -83,9 +83,9 @@ main(void) {
 	}
 	/* Open the file with the AC state */
 	acd = open(AC_ONLINE_PATH, O_RDONLY);
-	if (batd < 0) {
+	if (acd < 0) {
 		fprintf(stderr, "can't open %s: %s\n",
-			path, strerror(errno));
+			AC_ONLINE_PATH, strerror(errno));
 		return 1;
 	}
 	for (;; sleep(DELAY)) {
