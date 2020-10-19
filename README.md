@@ -50,4 +50,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 # NOTES
-Back in the day when was an unskilled Arch user, right after I had installed dwm, I was looking for a program to display notifications if ... Well, you got me. It turned out there were a lot of such things but all of them were either bloated, or did not work at all. Use this code if you feel the way I do.
+Back in the day when I was an unskilled Arch user, right after I had installed dwm, I was looking for a program to display notifications if ... Well, you got me. It turned out there were a lot of such things but all of them were either bloated, or did not work at all. Use this code if you feel the way I do.
